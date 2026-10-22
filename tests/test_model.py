@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
-from model import X,Y,accuracy,forward,initialize,loss_and_gradient,predict_proba,sigmoid
-from train import train
-from check_gradients import check_gradient
+from minimal_neural_network.model import X,Y,accuracy,forward,initialize,loss_and_gradient,predict_proba,sigmoid
+from minimal_neural_network.train import train
+from minimal_neural_network.check_gradients import check_gradient
 
 
 @pytest.mark.parametrize('seed',[0,1,13])

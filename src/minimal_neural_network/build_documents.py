@@ -4,11 +4,11 @@ import csv
 import json
 import nbformat
 
-ROOT=Path(__file__).resolve().parent
+from .paths import PROJECT_ROOT as ROOT, result_path
 
 
 def build():
-    result=json.loads((ROOT/'results/summary.json').read_text(encoding='utf-8'))
+    result=json.loads((result_path('summary.json')).read_text(encoding='utf-8'))
     reports=ROOT/'reports';reports.mkdir(exist_ok=True)
     guide=r'''# 用9个参数学会 XOR：实现、卡点与关键内容
 
@@ -75,7 +75,7 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
     guide+='| 方法 | 成功 / 20 | 失败 | 成功组迭代中位数 | 全部最终损失均值 |\n|---|---|---|---|---|\n'
     for row in result['optimizer_summary']:
         guide+=f"| {row['method']} | {row['successes']} / {row['seeds']} | {row['failures']} | {row['median_iterations_successes']:.0f} | {row['mean_final_loss']:.6f} |\n"
-    guide+='\n![相同起点的损失和梯度](../results/training_curves.png)\n\n![主例决策边界](../results/decision_boundary.png)\n'
+    guide+='\n![相同起点的损失和梯度](../results/figures/training_curves.png)\n\n![主例决策边界](../results/figures/decision_boundary.png)\n'
     guide+=f"\nSciPy BFGS作为独立参照，在相同seed 0起点上达到BCE={result['reference_bfgs']['loss']:.3g}、准确率100%。它用更严格的梯度停止条件，与我们的BCE目标停止条件不同，所以不把迭代数直接拿来排名。\n"
     guide+=r'''
 ## 6. 三个真实卡点
@@ -90,7 +90,7 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
     guide+='| 压力案例 | 最终BCE | 准确率 | 更新次数 | 停止原因 |\n|---|---|---|---|---|\n'
     for row in result['stress_cases']:
         guide+=f"| {row['case']} | {row['loss']:.6f} | {row['accuracy']:.0%} | {row['iterations']} | {row['reason']} |\n"
-    guide+='\n![显式保留的失败案例](../results/stress_curves.png)\n'
+    guide+='\n![显式保留的失败案例](../results/figures/stress_curves.png)\n'
     guide+=r'''
 多种子结果还提示，某些起点会进入长期难以改进的区域。不能仅凭10000步没成功就证明落在严格局部极小点。若继续研究，可预先规定多次重启及其总计算预算，再按训练损失选模型；不能丢弃失败后只汇报最好的一次。
 
@@ -104,7 +104,7 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
 
 先读 `model.py`，用纸重画各矩阵形状；再读 `check_gradients.py`，理解它为何能独立发现反向传播错误。随后读 `train.py`，对照三种更新递推。最后打开 `experiment.ipynb`，重跑主例、看结果表和压力案例；`run_experiment.py`可以重建全部多种子结果。
 
-已有NumPy代码和结果都在本项目，不需要预算分配课程的数据、配置或仓库。依赖和运行命令见README。
+代码位于`src/minimal_neural_network/`，Notebook位于`notebooks/`，结果分为`results/tables/`、`results/figures/`与`results/artifacts/`。先按README在仓库根目录执行`python -m pip install -e .`，Notebook从子目录启动也能导入同一份代码。本项目不需要预算分配课程的数据、配置或仓库。
 
 ## 9. 来源和核验边界
 
@@ -115,8 +115,8 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
     (reports/'LEARNING_GUIDE.md').write_text(guide,encoding='utf-8')
     md,code=nbformat.v4.new_markdown_cell,nbformat.v4.new_code_cell
     nb=nbformat.v4.new_notebook(cells=[
-        md('# Nine parameters learning XOR\n\nRead reports/LEARNING_GUIDE.md for the derivation and failure explanations. Run cells in order from this folder. No deep-learning framework or external dataset is needed.'),
-        code('from pathlib import Path\nimport json, csv\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom IPython.display import display, Image\nfrom model import X, Y, initialize, loss_and_gradient, predict_proba\nfrom check_gradients import check_gradient\nfrom train import train\nROOT = Path.cwd()\nassert (ROOT / "model.py").is_file()'),
+        md('# Nine parameters learning XOR\n\nRead ../reports/LEARNING_GUIDE.md for the derivation and failure explanations. Run cells in order from this folder. No deep-learning framework or external dataset is needed.'),
+        code('from pathlib import Path\nimport json, csv\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom IPython.display import display, Image\nfrom minimal_neural_network.model import X, Y, initialize, loss_and_gradient, predict_proba\nfrom minimal_neural_network.check_gradients import check_gradient\nfrom minimal_neural_network.train import train\nfrom minimal_neural_network.paths import PROJECT_ROOT as ROOT, result_path\nassert (ROOT / "src/minimal_neural_network/model.py").is_file()'),
         md('## Verify the hand-written gradient before training'),
         code('check = check_gradient(initialize(0))\nprint(check["relative_l2_error"])\nassert check["relative_l2_error"] < 1e-5\nfor component in check["components"]: print(component)'),
         md('## Train the predeclared primary example\nSuccess means mean BCE <= 0.02 and all four truth-table entries correct. This is not held-out accuracy or a claim of a finite global minimizer.'),
@@ -124,11 +124,11 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
         md('## Demonstrate the exact zero-initialization trap'),
         code('zero = train("adam", initial=np.zeros(9))\nprint(zero.reason, zero.loss, zero.accuracy)\nassert zero.iterations == 0 and not zero.success'),
         md('## Reproduce all 20 paired starts and the labeled stress cases\nThis regenerates the CSV tables and plots; failure runs are retained.'),
-        code('from run_experiment import run\nsummary = run()\nfor row in summary["optimizer_summary"]: print(row)\ndisplay(Image(filename="results/training_curves.png"))\ndisplay(Image(filename="results/decision_boundary.png"))\ndisplay(Image(filename="results/stress_curves.png"))'),
+        code('from minimal_neural_network.run_experiment import run\nsummary = run()\nfor row in summary["optimizer_summary"]: print(row)\ndisplay(Image(filename=str(result_path("training_curves.png"))))\ndisplay(Image(filename=str(result_path("decision_boundary.png"))))\ndisplay(Image(filename=str(result_path("stress_curves.png"))))'),
         md('## Test structural properties and optimizer behavior'),
-        code('import subprocess, sys\nchecks = subprocess.run([sys.executable, "-m", "pytest", "-q", "test_model.py"], capture_output=True, text=True)\nprint(checks.stdout)\nassert checks.returncode == 0, checks.stderr')
+        code('import subprocess, sys\nchecks = subprocess.run([sys.executable, "-m", "pytest", "-q", "tests/test_model.py"], cwd=ROOT, capture_output=True, text=True)\nprint(checks.stdout)\nassert checks.returncode == 0, checks.stderr')
     ],metadata={'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'}})
-    nbformat.write(nb,ROOT/'experiment.ipynb')
+    nbformat.write(nb,ROOT/'notebooks/experiment.ipynb')
     print('Built reports/LEARNING_GUIDE.md and experiment.ipynb')
 
 

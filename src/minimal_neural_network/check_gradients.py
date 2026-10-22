@@ -1,6 +1,6 @@
 """Central finite differences, independent of the backprop implementation."""
 import numpy as np
-from model import PARAMETER_NAMES, initialize, loss_and_gradient
+from .model import PARAMETER_NAMES, initialize, loss_and_gradient
 
 
 def check_gradient(theta,step=1e-5):

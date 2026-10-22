@@ -66,9 +66,9 @@ GD每次沿负梯度前进。动量保留先前的更新方向，使用v_t=0.9v_
 | momentum | 12 / 20 | 8 | 88 | 0.150516 |
 | adam | 10 / 20 | 10 | 229 | 0.183248 |
 
-![相同起点的损失和梯度](../results/training_curves.png)
+![相同起点的损失和梯度](../results/figures/training_curves.png)
 
-![主例决策边界](../results/decision_boundary.png)
+![主例决策边界](../results/figures/decision_boundary.png)
 
 SciPy BFGS作为独立参照，在相同seed 0起点上达到BCE=8.85e-09、准确率100%。它用更严格的梯度停止条件，与我们的BCE目标停止条件不同，所以不把迭代数直接拿来排名。
 
@@ -86,7 +86,7 @@ SciPy BFGS作为独立参照，在相同seed 0起点上达到BCE=8.85e-09、准�
 | saturated_hidden_x100 | 0.346966 | 75% | 3000 | iteration_cap |
 | gd_learning_rate_50 | 14.860284 | 75% | 3000 | iteration_cap |
 
-![显式保留的失败案例](../results/stress_curves.png)
+![显式保留的失败案例](../results/figures/stress_curves.png)
 
 多种子结果还提示，某些起点会进入长期难以改进的区域。不能仅凭10000步没成功就证明落在严格局部极小点。若继续研究，可预先规定多次重启及其总计算预算，再按训练损失选模型；不能丢弃失败后只汇报最好的一次。
 
@@ -100,7 +100,7 @@ SciPy BFGS作为独立参照，在相同seed 0起点上达到BCE=8.85e-09、准�
 
 先读 `model.py`，用纸重画各矩阵形状；再读 `check_gradients.py`，理解它为何能独立发现反向传播错误。随后读 `train.py`，对照三种更新递推。最后打开 `experiment.ipynb`，重跑主例、看结果表和压力案例；`run_experiment.py`可以重建全部多种子结果。
 
-已有NumPy代码和结果都在本项目，不需要预算分配课程的数据、配置或仓库。依赖和运行命令见README。
+代码位于`src/minimal_neural_network/`，Notebook位于`notebooks/`，结果分为`results/tables/`、`results/figures/`与`results/artifacts/`。先按README在仓库根目录执行`python -m pip install -e .`，Notebook从子目录启动也能导入同一份代码。本项目不需要预算分配课程的数据、配置或仓库。
 
 ## 9. 来源和核验边界
 

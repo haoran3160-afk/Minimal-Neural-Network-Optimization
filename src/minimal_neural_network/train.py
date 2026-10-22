@@ -1,7 +1,7 @@
 """Full-batch GD, heavy-ball momentum and Adam, implemented from equations."""
 from dataclasses import dataclass
 import numpy as np
-from model import accuracy, initialize, loss_and_gradient
+from .model import accuracy, initialize, loss_and_gradient
 
 DEFAULT_LEARNING_RATES={'gd':1.,'momentum':.2,'adam':.03}
 

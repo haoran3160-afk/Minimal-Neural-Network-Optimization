@@ -1,34 +1,40 @@
 # Minimal Neural Network Optimization
 
-A nine-parameter **2→2→1** NumPy network learning XOR, with hand-written backpropagation, GD, heavy-ball momentum and Adam. No deep-learning framework is required. This is a small teaching model, not a claim of absolute minimality across all possible architectures.
+用9个参数学习XOR的独立NumPy实验：手写反向传播、GD、动量和Adam。先读 [中文学习说明](reports/LEARNING_GUIDE.pdf)，再打开 [experiment.ipynb](notebooks/experiment.ipynb) 逐步重跑。
 
-从 [中文学习说明](reports/LEARNING_GUIDE.pdf) 开始，了解推导、实现顺序和真实卡点；再打开 [experiment.ipynb](experiment.ipynb) 逐步重跑。可编辑说明在 [LEARNING_GUIDE.md](reports/LEARNING_GUIDE.md)。
+## 目录
 
-## Run
-
-Use Python 3.12 from this directory, preferably in a virtual environment.
-
-```powershell
-python -m pip install -r requirements.txt
-python check_gradients.py
-python -m pytest -q test_model.py
-python run_experiment.py
-python -m jupyterlab experiment.ipynb
+```text
+src/minimal_neural_network/  模型、优化器、梯度检查和实验入口
+tests/                      梯度、稳定性和结构性质测试
+notebooks/                  可交互重跑的实验
+reports/                    学习说明及可编辑Markdown
+results/                    tables/、figures/、artifacts/
+.local/                     本地临时文件与缓存，不进Git
 ```
 
-## What to read
+## 运行
 
-| File | Purpose |
-|---|---|
-| [model.py](model.py) | Nine parameters, stable BCE, explicit chain-rule gradients |
-| [check_gradients.py](check_gradients.py) | Independent central finite differences |
-| [train.py](train.py) | Three optimizers from their recurrence equations |
-| [run_experiment.py](run_experiment.py) | 20 paired starts, all failures retained, stress cases and plots |
-| [test_model.py](test_model.py) | Derivatives, symmetry, stability and the predeclared training target |
-| [results/](results/) | Model parameters, predictions, learning curves and complete run tables |
+在仓库根目录使用Python 3.12，建议先建立虚拟环境：
 
-The predeclared Adam seed-0 example reaches BCE 0.0199167 and 4/4 correct truth-table entries in 194 updates. At the fixed learning rates used here, the 20-seed success counts are GD 12, momentum 12 and Adam 10. These settings are not an exhaustive optimizer benchmark; iteration medians are conditional on each method's own successful subset.
+```powershell
+python -m pip install -e .
+python -m minimal_neural_network.check_gradients
+python -m pytest -q
+python -m jupyterlab notebooks/experiment.ipynb
+```
 
-Zero initialization is an exact stationary trap. Saturated hidden units and a very large step also produce retained failures. Four-point training accuracy is not held-out generalization, and the loss target is not a proof of a finite-parameter global minimum.
+重建全部实验：`python -m minimal_neural_network.run_experiment`。依赖统一来自`requirements.txt`；可编辑安装让Notebook从子目录启动时也能导入代码。
 
-`python build_documents.py` refreshes the Markdown guide and notebook from saved results; rerun the notebook afterward to restore outputs. Code and explanations were AI-assisted and independently reviewed. `work/` contains local scratch and review records and is excluded from Git. This repository is independent of the budget-allocation course project.
+## 阅读顺序
+
+1. [model.py](src/minimal_neural_network/model.py)：九个参数、稳定BCE与手写梯度。
+2. [check_gradients.py](src/minimal_neural_network/check_gradients.py)：独立中心差分核对。
+3. [train.py](src/minimal_neural_network/train.py)：三种优化器的更新方程。
+4. [实验Notebook](notebooks/experiment.ipynb)：训练、20种子比较及真实失败案例。
+
+固定主例用Adam在194次更新后得到BCE 0.0199167，四个真值表样本全部正确。完整结果同时保留失败：20个配对起点下GD成功12次、动量12次、Adam10次。全零初始化、隐藏层饱和、过大步长的卡点见 [学习说明源文件](reports/LEARNING_GUIDE.md)。
+
+这是一种教学上很小的网络，不声称所有架构下绝对最小。四点训练准确率不等于独立泛化能力，固定学习率的比较也不证明某种优化器普遍更好。
+
+`python -m minimal_neural_network.build_documents`根据结果更新说明和Notebook源文件，之后应重新运行Notebook恢复输出。代码与解释由AI协助完成，供你亲自重推、重跑和继续研究；本仓库与预算课程项目独立。
