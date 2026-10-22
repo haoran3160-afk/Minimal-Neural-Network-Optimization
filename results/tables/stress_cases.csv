@@ -1,0 +1,4 @@
+case,success,loss,accuracy,iterations,reason
+all_zero,False,0.6931471805599453,0.5,0,stationary_before_target
+saturated_hidden_x100,False,0.346966003531764,0.75,3000,iteration_cap
+gd_learning_rate_50,False,14.86028355800575,0.75,3000,iteration_cap

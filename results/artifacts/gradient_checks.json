@@ -1,0 +1,623 @@
+[
+  {
+    "seed": 0,
+    "scale": 0.2,
+    "relative_l2_error": 3.866635238780615e-09,
+    "maximum_absolute_error": 6.117550964499646e-12,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.0002082864580015692,
+        "numeric": 0.00020828645475035043,
+        "absolute_error": 3.251218765780786e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 1.1097277909207642e-05,
+        "numeric": 1.1097278651561736e-05,
+        "absolute_error": 7.42354093168497e-13
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.0008855466598209176,
+        "numeric": 0.0008855466582247117,
+        "absolute_error": 1.5962059148402763e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 0.0006416881133934176,
+        "numeric": 0.0006416881193072044,
+        "absolute_error": 5.91378682135435e-12
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.00033712719199852775,
+        "numeric": -0.00033712719282874554,
+        "absolute_error": 8.302177847106795e-13
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 3.8047093409536437e-06,
+        "numeric": 3.8047121009299185e-06,
+        "absolute_error": 2.759976274878151e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.00044360638552531917,
+        "numeric": 0.0004436063794077682,
+        "absolute_error": 6.117550964499646e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 6.579046607826109e-05,
+        "numeric": 6.579046751831186e-05,
+        "absolute_error": 1.4400507696021858e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": -0.00024768909659675376,
+        "numeric": -0.0002476890970104506,
+        "absolute_error": 4.1369685455094896e-13
+      }
+    ]
+  },
+  {
+    "seed": 0,
+    "scale": 1.0,
+    "relative_l2_error": 4.7110898905182226e-11,
+    "maximum_absolute_error": 7.246011082817638e-12,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.01163893235292715,
+        "numeric": 0.01163893234568114,
+        "absolute_error": 7.246011082817638e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 3.771710126274086e-05,
+        "numeric": 3.7717096112999116e-05,
+        "absolute_error": 5.149741744148173e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.08234244325360775,
+        "numeric": 0.08234244325278084,
+        "absolute_error": 8.269079865286244e-13
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 0.07310825705591809,
+        "numeric": 0.07310825705375557,
+        "absolute_error": 2.1625201629404955e-12
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.027461152528674815,
+        "numeric": -0.027461152524166362,
+        "absolute_error": 4.508452638996019e-12
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 0.0015827464202143593,
+        "numeric": 0.0015827464172613046,
+        "absolute_error": 2.9530546844652728e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.04710833679586125,
+        "numeric": 0.047108336798107324,
+        "absolute_error": 2.2460713844374425e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 0.007873768372172862,
+        "numeric": 0.00787376837063647,
+        "absolute_error": 1.5363925409683787e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": -0.003927939675183623,
+        "numeric": -0.003927939679071457,
+        "absolute_error": 3.8878344987836044e-12
+      }
+    ]
+  },
+  {
+    "seed": 0,
+    "scale": 3.0,
+    "relative_l2_error": 2.5904424215888838e-11,
+    "maximum_absolute_error": 3.586830832347232e-11,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": -0.054034797953674066,
+        "numeric": -0.05403479796939336,
+        "absolute_error": 1.5719293922078492e-11
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 0.02268027811055351,
+        "numeric": 0.022680278100040138,
+        "absolute_error": 1.0513371423437334e-11
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.28823632730185467,
+        "numeric": 0.2882363273060129,
+        "absolute_error": 4.158229316431061e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 0.8188325902683893,
+        "numeric": 0.818832590232521,
+        "absolute_error": 3.586830832347232e-11
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.06773153676468242,
+        "numeric": -0.06773153677919197,
+        "absolute_error": 1.4509546342189594e-11
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 0.08308731714037099,
+        "numeric": 0.08308731712647344,
+        "absolute_error": 1.3897549777652785e-11
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.38243847591476376,
+        "numeric": 0.38243847593211194,
+        "absolute_error": 1.7348178449339002e-11
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 0.09955137322515095,
+        "numeric": 0.09955137323380824,
+        "absolute_error": 8.657283223634238e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": 0.005780726326251262,
+        "numeric": 0.005780726319848383,
+        "absolute_error": 6.402879094979941e-12
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "scale": 0.2,
+    "relative_l2_error": 1.501034154702118e-09,
+    "maximum_absolute_error": 4.025077200795618e-12,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": -4.196841074734052e-05,
+        "numeric": -4.1968412078929866e-05,
+        "absolute_error": 1.3315893458948173e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 0.00021543561040851533,
+        "numeric": 0.0002154356082417763,
+        "absolute_error": 2.1667390375391254e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.0004128784410200783,
+        "numeric": 0.0004128784369950011,
+        "absolute_error": 4.025077200795618e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": -0.00042801459561119144,
+        "numeric": -0.0004280145959878467,
+        "absolute_error": 3.7665524995830757e-13
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": 0.00018437388174982923,
+        "numeric": 0.00018437388282777076,
+        "absolute_error": 1.0779415283556498e-12
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 0.0016390410816474361,
+        "numeric": 0.001639041080636616,
+        "absolute_error": 1.010820116845168e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": -0.00019044540423930612,
+        "numeric": -0.00019044540389145934,
+        "absolute_error": 3.4784677850792367e-13
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 0.0011555670456238343,
+        "numeric": 0.0011555670476059987,
+        "absolute_error": 1.982164432590139e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": -0.00016694753699686427,
+        "numeric": -0.0001669475335752679,
+        "absolute_error": 3.4215963666973243e-12
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "scale": 1.0,
+    "relative_l2_error": 6.535108939109911e-11,
+    "maximum_absolute_error": 8.051809219367101e-12,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.00012696480398512178,
+        "numeric": 0.00012696480533591625,
+        "absolute_error": 1.3507944762736201e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": -0.0061787993395611834,
+        "numeric": -0.006178799344391805,
+        "absolute_error": 4.8306211461457416e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.03474063875945867,
+        "numeric": 0.03474063875463784,
+        "absolute_error": 4.8208242953151625e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": -0.015956424611839687,
+        "numeric": -0.01595642461493796,
+        "absolute_error": 3.0982716392458087e-12
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": 0.019182972929851577,
+        "numeric": 0.019182972937903386,
+        "absolute_error": 8.051809219367101e-12
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 0.07157061174367539,
+        "numeric": 0.0715706117371262,
+        "absolute_error": 6.549191744475991e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": -0.020947381466679127,
+        "numeric": -0.020947381462743664,
+        "absolute_error": 3.935463066540024e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 0.061297225554140994,
+        "numeric": 0.061297225550926975,
+        "absolute_error": 3.2140193284568852e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": -0.005110057327283729,
+        "numeric": -0.005110057327284423,
+        "absolute_error": 6.938893903907228e-16
+      }
+    ]
+  },
+  {
+    "seed": 1,
+    "scale": 3.0,
+    "relative_l2_error": 2.5852364401792847e-11,
+    "maximum_absolute_error": 1.4323705416208199e-11,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": -0.06816451456603609,
+        "numeric": -0.0681645145550469,
+        "absolute_error": 1.0989181786769109e-11
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": -0.06926141973087285,
+        "numeric": -0.06926141972174449,
+        "absolute_error": 9.1283647307705e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.22108787311509895,
+        "numeric": 0.22108787310903819,
+        "absolute_error": 6.060763002579961e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": -0.06951530085797539,
+        "numeric": -0.06951530086007907,
+        "absolute_error": 2.1036783426353622e-12
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": 0.2099910046759859,
+        "numeric": 0.2099910046626796,
+        "absolute_error": 1.3306300505888657e-11
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 0.10751887110540548,
+        "numeric": 0.10751887110638235,
+        "absolute_error": 9.768713615798674e-13
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": -0.2198070812372321,
+        "numeric": -0.21980708123647827,
+        "absolute_error": 7.538414337204813e-13
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": 0.2889261677619962,
+        "numeric": 0.28892616776854396,
+        "absolute_error": 6.547762332331786e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": -0.026695291302949058,
+        "numeric": -0.026695291288625352,
+        "absolute_error": 1.4323705416208199e-11
+      }
+    ]
+  },
+  {
+    "seed": 13,
+    "scale": 0.2,
+    "relative_l2_error": 4.0731269280517165e-10,
+    "maximum_absolute_error": 5.390122809895148e-12,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.002886525396322826,
+        "numeric": 0.0028865253909327033,
+        "absolute_error": 5.390122809895148e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 5.830384238677774e-05,
+        "numeric": 5.83038450852058e-05,
+        "absolute_error": 2.6984280627573125e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": 0.00018166081459910707,
+        "numeric": 0.0001816608141691489,
+        "absolute_error": 4.2995817951980986e-13
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 4.2707829821143396e-05,
+        "numeric": 4.2707826164445344e-05,
+        "absolute_error": 3.656698052266916e-12
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.007764089971894567,
+        "numeric": -0.007764089970940801,
+        "absolute_error": 9.537657122415943e-13
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 2.13191876765065e-05,
+        "numeric": 2.1319185306012397e-05,
+        "absolute_error": 2.370494103879359e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.00410678268927922,
+        "numeric": 0.004106782686141841,
+        "absolute_error": 3.13737924528823e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": -0.006277221391011195,
+        "numeric": -0.006277221387129827,
+        "absolute_error": 3.881368317026901e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": 0.0015760699116727506,
+        "numeric": 0.0015760699134670373,
+        "absolute_error": 1.7942867244075122e-12
+      }
+    ]
+  },
+  {
+    "seed": 13,
+    "scale": 1.0,
+    "relative_l2_error": 2.1842211606055162e-11,
+    "maximum_absolute_error": 1.0969529104509768e-11,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.11125192594969693,
+        "numeric": 0.11125192594385601,
+        "absolute_error": 5.840924965916372e-12
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 0.0002572846976512847,
+        "numeric": 0.0002572846935500195,
+        "absolute_error": 4.101265225868456e-12
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": -0.09654425908679307,
+        "numeric": -0.09654425908167673,
+        "absolute_error": 5.1163379088947636e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 0.00012723444023091395,
+        "numeric": 0.00012723443965079184,
+        "absolute_error": 5.801221048679084e-13
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.2026233499304049,
+        "numeric": -0.2026233499263785,
+        "absolute_error": 4.026390332256824e-12
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 8.821061948022154e-05,
+        "numeric": 8.821061658892403e-05,
+        "absolute_error": 2.8912975122809617e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.15514948172342538,
+        "numeric": 0.15514948172867804,
+        "absolute_error": 5.252659418530925e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": -0.21136155976105375,
+        "numeric": -0.21136155975987056,
+        "absolute_error": 1.183192432918645e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": 0.014458769115454656,
+        "numeric": 0.014458769126424185,
+        "absolute_error": 1.0969529104509768e-11
+      }
+    ]
+  },
+  {
+    "seed": 13,
+    "scale": 3.0,
+    "relative_l2_error": 2.5240490588812295e-11,
+    "maximum_absolute_error": 2.691336042914827e-11,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": 0.18533298596441325,
+        "numeric": 0.1853329859913266,
+        "absolute_error": 2.691336042914827e-11
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 3.1283345561505896e-07,
+        "numeric": 3.128164394183841e-07,
+        "absolute_error": 1.701619667485433e-11
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": -0.18531030575202315,
+        "numeric": -0.18531030575585913,
+        "absolute_error": 3.83598708353361e-12
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 1.553973879632182e-07,
+        "numeric": 1.553868145265369e-07,
+        "absolute_error": 1.0573436681296702e-11
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.18734369080546978,
+        "numeric": -0.18734369080508625,
+        "absolute_error": 3.8352654385676033e-13
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": 1.5567676876370296e-07,
+        "numeric": 1.5567547251293945e-07,
+        "absolute_error": 1.2962507635113106e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": 0.4499582541827902,
+        "numeric": 0.44995825417837304,
+        "absolute_error": 4.417133325773648e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": -0.4751906823593255,
+        "numeric": -0.47519068234747047,
+        "absolute_error": 1.1855016968098653e-11
+      },
+      {
+        "parameter": "b2",
+        "analytic": 0.002149679985789771,
+        "numeric": 0.0021496799784692655,
+        "absolute_error": 7.32050531304651e-12
+      }
+    ]
+  },
+  {
+    "seed": 0,
+    "scale": 1.0,
+    "state": "trained_adam",
+    "relative_l2_error": 9.088379278910217e-10,
+    "maximum_absolute_error": 1.4757200561370254e-11,
+    "components": [
+      {
+        "parameter": "W1_00",
+        "analytic": -0.0005334749720895465,
+        "numeric": -0.000533474972877479,
+        "absolute_error": 7.879325447310292e-13
+      },
+      {
+        "parameter": "W1_01",
+        "analytic": 0.0004812582748131781,
+        "numeric": 0.0004812582853064295,
+        "absolute_error": 1.0493251395831543e-11
+      },
+      {
+        "parameter": "W1_10",
+        "analytic": -0.0018863456552807828,
+        "numeric": -0.00188634565502499,
+        "absolute_error": 2.557927827884221e-13
+      },
+      {
+        "parameter": "W1_11",
+        "analytic": 0.0014974080158000284,
+        "numeric": 0.0014974080052299053,
+        "absolute_error": 1.057012311879435e-11
+      },
+      {
+        "parameter": "b1_0",
+        "analytic": -0.0004755466633203868,
+        "numeric": -0.0004755466780775874,
+        "absolute_error": 1.4757200561370254e-11
+      },
+      {
+        "parameter": "b1_1",
+        "analytic": -0.0009128260709043831,
+        "numeric": -0.0009128260791343988,
+        "absolute_error": 8.23001573575094e-12
+      },
+      {
+        "parameter": "w2_0",
+        "analytic": -0.00958325202786323,
+        "numeric": -0.009583252025963107,
+        "absolute_error": 1.9001224205172917e-12
+      },
+      {
+        "parameter": "w2_1",
+        "analytic": -0.007463665985348743,
+        "numeric": -0.007463665988721723,
+        "absolute_error": 3.372979846816282e-12
+      },
+      {
+        "parameter": "b2",
+        "analytic": 0.001948393976325743,
+        "numeric": 0.0019483939751527288,
+        "absolute_error": 1.1730141597637855e-12
+      }
+    ]
+  }
+]

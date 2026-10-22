@@ -1,0 +1,4 @@
+method,seeds,successes,failures,mean_final_loss,median_iterations_successes,mean_accuracy
+gd,20,12,8,0.15063694845472994,190.0,0.8
+momentum,20,12,8,0.150515790374039,88.0,0.8
+adam,20,10,10,0.1832482511441093,229.0,0.825

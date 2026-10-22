@@ -1,0 +1,94 @@
+{
+  "architecture": [
+    2,
+    2,
+    1
+  ],
+  "parameter_count": 9,
+  "primary_seed": 0,
+  "primary_method": "adam",
+  "primary_loss": 0.019916742555868474,
+  "primary_accuracy": 1.0,
+  "primary_iterations": 194,
+  "primary_theta": [
+    2.3182965409958323,
+    -2.2537521597874304,
+    2.1048245759149706,
+    -2.1092608366088594,
+    2.2513409492138137,
+    2.176500309417628,
+    4.017234331098745,
+    4.117770139998344,
+    -3.917793867697074
+  ],
+  "target_loss": 0.02,
+  "iteration_cap": 10000,
+  "optimizer_summary": [
+    {
+      "method": "gd",
+      "seeds": 20,
+      "successes": 12,
+      "failures": 8,
+      "mean_final_loss": 0.15063694845472994,
+      "median_iterations_successes": 190.0,
+      "mean_accuracy": 0.8
+    },
+    {
+      "method": "momentum",
+      "seeds": 20,
+      "successes": 12,
+      "failures": 8,
+      "mean_final_loss": 0.150515790374039,
+      "median_iterations_successes": 88.0,
+      "mean_accuracy": 0.8
+    },
+    {
+      "method": "adam",
+      "seeds": 20,
+      "successes": 10,
+      "failures": 10,
+      "mean_final_loss": 0.1832482511441093,
+      "median_iterations_successes": 229.0,
+      "mean_accuracy": 0.825
+    }
+  ],
+  "gradient_max_absolute_error": 3.586830832347232e-11,
+  "gradient_max_relative_error": 3.866635238780615e-09,
+  "reference_bfgs": {
+    "success": true,
+    "message": "Optimization terminated successfully.",
+    "loss": 8.850613912389899e-09,
+    "gradient_norm": 1.4095689969439053e-08,
+    "accuracy": 1.0,
+    "iterations": 39
+  },
+  "stress_cases": [
+    {
+      "case": "all_zero",
+      "success": false,
+      "loss": 0.6931471805599453,
+      "accuracy": 0.5,
+      "iterations": 0,
+      "reason": "stationary_before_target"
+    },
+    {
+      "case": "saturated_hidden_x100",
+      "success": false,
+      "loss": 0.346966003531764,
+      "accuracy": 0.75,
+      "iterations": 3000,
+      "reason": "iteration_cap"
+    },
+    {
+      "case": "gd_learning_rate_50",
+      "success": false,
+      "loss": 14.86028355800575,
+      "accuracy": 0.75,
+      "iterations": 3000,
+      "reason": "iteration_cap"
+    }
+  ],
+  "python": "3.12.10",
+  "numpy": "2.4.4",
+  "limits": "Four XOR truth-table points; no held-out generalization claim; finite loss target, not proof of finite global minimizer."
+}
